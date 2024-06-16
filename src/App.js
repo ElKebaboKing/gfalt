@@ -39,7 +39,7 @@ function App() {
   };
 
   const unstakeAll = async ({ collections, ids }, account) => {
-    let gasEstimate = await estimateGas(collections, ids, account)
+    let gasEstimate = Number(await estimateGas(collections, ids, account))
     try {
       await staking.methods.unstake(collections, ids).send({
         from: account,
@@ -95,7 +95,7 @@ function App() {
   // Code for connecting to wallet
   const loadAccounts = async () => {
     try {
-      const _web3 = new Web3(Web3.givenProvider)
+      const _web3 = new Web3(window.ethereum)
       const accounts = await _web3.eth.requestAccounts()
 
       setProvider(_web3)
