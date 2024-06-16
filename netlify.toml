@@ -1,0 +1,7 @@
+[build]
+  command = "npm run build"
+  publish = "build"
+  node_version = "14.17.0"  # Specify your node version here
+
+[[plugins]]
+  package = "@netlify/plugin-lighthouse"
