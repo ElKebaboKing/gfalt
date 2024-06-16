@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react"
 
 import './App.css';
 import Button from './components/Button';
-let Web3 = require("web3")
+let { Web3 } = require("web3")
 
 // init web3 client
 const RPC = "https://bsc-dataseed1.binance.org"
